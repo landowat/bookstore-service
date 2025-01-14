@@ -1,18 +1,6 @@
-import http from "http";
-
+import app from "./src/app.js";
 const PORT = 3000;
 
-const rotas = {
-    "/": "Bookstore Service API Node.js",
-    "/Books": "Bookstore Books",
-    "/Authors": "Bookstore Authors"
-};
-
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end(rotas[req.url]);
-});
-
-server.listen(PORT, () => {
-    console.log("servidor escutando!");
+app.listen(PORT, () => {
+    console.log("Server Listening!");
 });
